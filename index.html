@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+b<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -175,39 +175,48 @@
   /* ── SECTION SHARED ── */
   section { padding: 120px 48px; }
   .section-eyebrow {
-    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    font-size: 1rem; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--amber); margin-bottom: 20px;
     display: flex; align-items: center; gap: 12px;
   }
   .section-eyebrow::before {
     content: ''; width: 24px; height: 1px; background: var(--amber); display: block;
   }
-  h2 {
+ h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 400; line-height: 1.15;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.05;
     color: var(--parchment);
-    margin-bottom: 28px;
-  }
+    margin-bottom: 36px;
+}
   h2 em { font-style: italic; color: var(--amber); }
   .body-text {
-    font-size: 1rem; font-weight: 300; line-height: 1.85;
+    font-size: 1.2rem; font-weight: 300; line-height: 1.9;
     color: var(--mid-text);
   }
 
   /* ── STORY ── */
-  #story {
+ #story {
     background: var(--cream);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-    align-items: center;
-  }
-  #story .text-col { order: 2; }
+    display: flex;
+    justify-content: center;
+    padding: 120px 48px;
+}
+  #story .text-col {
+    max-width: 600px;
+    text-align: center;
+}
+
+#story .visual-col {
+    display: none;
+}
   #story .visual-col { order: 1; }
   #story .section-eyebrow { color: var(--amber); }
   #story h2 { color: var(--ink); }
   #story .body-text { color: #4A5568; }
   .quote-block {
-    margin: 40px 0 0;
+    margin: 20px 0 0;
     padding: 28px 0 0;
     border-top: 1px solid rgba(200,131,42,0.25);
   }
@@ -228,8 +237,8 @@
 }
 
 .story-video video {
-    width: 100%;
-    max-width: 700px;
+    width: 200%;
+    max-width: 1000px;
     height: auto;
     display: block;
     border-radius: 10px;
@@ -278,18 +287,59 @@
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
   }
   .mat-card {
-    background: var(--ink-mid);
     padding: 40px 32px;
-    position: relative; overflow: hidden;
-    transition: background 0.3s;
-  }
-  .mat-card:hover { background: rgba(200,131,42,0.08); }
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  .mat-card:hover {
+    transform: scale(1.03);
+}
   .mat-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0;
     height: 2px; background: var(--amber); transform: scaleX(0);
     transform-origin: left; transition: transform 0.4s;
   }
   .mat-card:hover::before { transform: scaleX(1); }
+  
+  .carabao-bg {
+    background:
+        linear-gradient(rgba(13,27,42,.78), rgba(13,27,42,.78)),
+        url("images/carabaohorn.png");
+}
+
+.madre-bg {
+    background:
+        linear-gradient(rgba(13,27,42,.78), rgba(13,27,42,.78)),
+        url("images/madredecacao.jpg");
+}
+
+.ironwood-bg {
+    background:
+        linear-gradient(rgba(13,27,42,.78), rgba(13,27,42,.78)),
+        url("images/ironwood.jpg");
+}
+
+.hardwood-bg {
+    background:
+        linear-gradient(rgba(13,27,42,.78), rgba(13,27,42,.78)),
+        url("images/hardwood.jpg");
+}
+
+.resin-bg {
+    background:
+        linear-gradient(rgba(13,27,42,.78), rgba(13,27,42,.78)),
+        url("images/resin.jpg");
+}
+
+.hybrid-bg {
+    background:
+        linear-gradient(rgba(13,27,42,.78), rgba(13,27,42,.78)),
+        url("images/hybrid.jpg");
+}
   .mat-name {
     font-family: 'Playfair Display', serif; font-style: italic;
     font-size: 1.3rem; color: var(--parchment);
@@ -308,6 +358,7 @@
   background: url("images/aseanpen.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -438,7 +489,15 @@
   }
 
   /* ── PROCESS ── */
-  #process { background: var(--ink); }
+  #process {
+    background:
+        linear-gradient(rgba(13,27,42,.82), rgba(13,27,42,.82)),
+        url("images/process.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
   .process-header { max-width: 480px; margin-bottom: 80px; }
   .process-steps { display: flex; flex-direction: column; gap: 0; }
   .process-step {
@@ -490,10 +549,20 @@
 
   /* ── TESTIMONIAL ── */
   #testimonial {
-    background: var(--ink-mid);
-    padding: 100px 48px;
-    display: flex; align-items: center; justify-content: center;
-  }
+    background:
+        linear-gradient(rgba(13,27,42,.70), rgba(13,27,42,.70)),
+        url("images/nonoy-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 120px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   .testi-inner { max-width: 680px; text-align: center; }
   .testi-mark {
     font-family: 'Playfair Display', serif;
@@ -536,10 +605,11 @@
     padding-bottom: 2px;
   }
   .connect-link:hover { color: var(--amber); border-color: var(--amber); }
-  .connect-tagline {
-    font-size: 0.72rem; color: rgba(242,235,217,0.3);
-    font-style: italic; font-family: 'Playfair Display', serif;
-  }
+  .connect-tagline img {
+    height: 260px;
+    width: auto;
+    display: block;
+}
 
   /* ── FOOTER ── */
   footer {
@@ -679,32 +749,32 @@
     <p class="body-text" style="margin-top:16px;">Every blank begins as something the Philippines has carried for centuries. The carabao's horn. The ironwood's density. The grain that only grows here. We find these things and we turn them.</p>
   </div>
   <div class="materials-grid">
-    <div class="mat-card">
+    <div class="mat-card carabao-bg">
       <div class="mat-name">Carabao Horn</div>
       <div class="mat-desc">Water buffalo horn polished to a warm, translucent depth. The body of the 48th ASEAN Summit pen. No two sections are the same color.</div>
       <div class="mat-origin">Water Buffalo · Philippines</div>
     </div>
-    <div class="mat-card">
+    <div class="mat-card madre-bg">
       <div class="mat-name">Madre de Cacao</div>
       <div class="mat-desc">The wood of hedgerows and farm borders across the Visayas. Dense, warm-grained, and distinctly Filipino — used for the ASEAN Summit pen cap.</div>
       <div class="mat-origin">Gliricidia sepium · Native</div>
     </div>
-    <div class="mat-card">
+   <div class="mat-card ironwood-bg">
       <div class="mat-name">Philippine Ironwood</div>
       <div class="mat-desc">Among the hardest woods in the world. Polished to a deep, almost metallic luster. Heirloom-grade from the day it's turned.</div>
       <div class="mat-origin">Xanthostemon · Mindanao</div>
     </div>
-    <div class="mat-card">
+   <div class="mat-card hardwood-bg">
       <div class="mat-name">Native Hardwoods</div>
       <div class="mat-desc">Sourced across the archipelago — each species chosen for grain character, workability, and what story it wants to tell.</div>
       <div class="mat-origin">Various · Philippines</div>
     </div>
-    <div class="mat-card">
+   <div class="mat-card resin-bg">
       <div class="mat-name">Resin & Acrylic</div>
       <div class="mat-desc">For the Hinugyaw series — swirling, saturated blanks named after Filipino feelings. Alab's fire. Hiwoga's mystery. Laya's freedom in color.</div>
       <div class="mat-origin">Handcast · Iloilo</div>
     </div>
-    <div class="mat-card">
+    <div class="mat-card hybrid-bg">
       <div class="mat-name">Wood-Resin Hybrids</div>
       <div class="mat-desc">Philippine hardwood stabilized and infused with resin — preserving the organic grain while adding depth, color, and structural longevity.</div>
       <div class="mat-origin">Stabilized · Custom</div>
@@ -884,7 +954,9 @@
     <a href="https://www.instagram.com/banwapens/" target="_blank" class="connect-link">Instagram</a>
     <a href="#commission" class="connect-link">Commission</a>
   </div>
-  <div class="connect-tagline">From wood to word.</div>
+  <div class="connect-tagline">
+    <img src="images/logo2.png" alt="Banwa Pens logo">
+</div>
 </div>
 
 <!-- FOOTER -->
